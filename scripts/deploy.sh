@@ -13,4 +13,4 @@ echo "Running migrations..."
 php artisan migrate --force
 
 echo "Build UI..."
-npm run build
+npm install && npm run build
