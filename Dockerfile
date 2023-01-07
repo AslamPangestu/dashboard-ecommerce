@@ -1,5 +1,7 @@
 FROM richarvey/nginx-php-fpm:2.1.2
 
+RUN apk add --update nodejs=14.21.2 npm
+
 COPY . .
 
 # Image config
@@ -16,13 +18,5 @@ ENV LOG_CHANNEL stderr
 
 # Allow composer to run as root
 ENV COMPOSER_ALLOW_SUPERUSER 1
-
-USER root
-
-RUN curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
-RUN ["sh",  "./nodesource_setup.sh"]
-RUN apt-get update \
-	# gd
-	&& apt-get install -y build-essential  openssl nginx libfreetype6-dev libjpeg-dev libpng-dev libwebp-dev zlib1g-dev libzip-dev gcc g++ make vim unzip curl git jpegoptim optipng pngquant gifsicle locales libonig-dev nodejs
 
 CMD ["/start.sh"]
