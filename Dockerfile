@@ -17,4 +17,6 @@ ENV LOG_CHANNEL stderr
 # Allow composer to run as root
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
+FROM node:14.21.2-buster-slim
+
 CMD ["/start.sh"]
