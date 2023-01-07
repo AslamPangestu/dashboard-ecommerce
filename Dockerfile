@@ -1,12 +1,5 @@
 FROM richarvey/nginx-php-fpm:2.1.2
 
-# Setup NodeJS
-RUN curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
-RUN ["./nodesource_setup.sh"]
-RUN apt-get update \
-    # gd
-    && apt-get install -y build-essential  openssl nginx libfreetype6-dev libjpeg-dev libpng-dev libwebp-dev zlib1g-dev libzip-dev gcc g++ make vim unzip curl git jpegoptim optipng pngquant gifsicle locales libonig-dev nodejs
-
 COPY . .
 
 # Image config
