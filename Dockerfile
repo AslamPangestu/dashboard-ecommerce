@@ -1,6 +1,7 @@
+FROM node:14.21.2-buster-slim
 FROM richarvey/nginx-php-fpm:2.1.2
 
-RUN apk add --update nodejs=14.21.2 npm
+# RUN apk add --update nodejs=14.21.2 npm
 
 COPY . .
 
