@@ -1,7 +1,7 @@
 # FROM node:14.21.2-buster-slim
 FROM richarvey/nginx-php-fpm:2.1.2
 
-RUN apk add nodejs=14.21.2s npm=6.14.17
+RUN apk add nodejs=14.21.2s npm=6.14.17 --repository=https://dl-cdn.alpinelinux.org/alpine/v3.14/main
 
 # RUN apk add --update nodejs=14.21.2 npm
 
