@@ -1,8 +1,8 @@
 # FROM node:14.21.2-buster-slim
 FROM richarvey/nginx-php-fpm:2.1.2 as Base
 
-RUN apk update && apk upgrade --no-cache
-RUN apk add  --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/main/ nodejs=14.21.2 npm  
+RUN apk add nodejs npm
+
 # RUN apk add --update nodejs=14.21.2 npm
 
 COPY . .
