@@ -11,6 +11,7 @@ php artisan route:cache
 
 echo "Running migrations..."
 php artisan migrate --force
+php artisan db:seed --force
 
 echo "Build UI..."
 npm install && npm run build
